@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Servicio - Banca Privada Vetacap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-principal: #1036E2;
+            --verde-acento: #00C600;
+            --azul-oscuro: #021751;
+            --blanco: #FFFFFF;
+            --negro: #000000;
+            --gris-claro: #f5f7fa;
+            --gris-medio: #e1e5eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: var(--negro);
+            background: var(--blanco);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0 20px 0;
+            border-bottom: 3px solid var(--azul-principal);
+            margin-bottom: 30px;
+        }
+
+        .logo-container { display: flex; flex-direction: column; align-items: flex-start; }
+        .logo { height: 45px; margin-bottom: 5px; }
+        .slogan { color: var(--verde-acento); font-size: 11pt; font-weight: 700; letter-spacing: 0.5px; }
+
+        .header-info { text-align: right; font-size: 9pt; color: var(--azul-oscuro); }
+        .header-info .doc-title { font-size: 12pt; font-weight: 700; color: var(--azul-principal); }
+
+        /* SECCIONES */
+        .section { margin-bottom: 40px; page-break-inside: avoid; }
+
+        .section-number {
+            display: inline-block;
+            background: var(--azul-principal);
+            color: var(--blanco);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            font-size: 14pt;
+            margin-right: 12px;
+        }
+
+        .section h2 {
+            color: var(--azul-principal);
+            font-size: 18pt;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--verde-acento);
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3 { color: var(--azul-oscuro); font-size: 13pt; font-weight: 600; margin: 25px 0 12px 0; }
+        .section h4 { color: var(--azul-principal); font-size: 11pt; font-weight: 600; margin: 18px 0 10px 0; }
+        .section p { margin-bottom: 12px; text-align: justify; }
+
+        /* INFO BOX */
+        .info-box {
+            background: var(--gris-claro);
+            border-left: 4px solid var(--azul-principal);
+            padding: 18px 22px;
+            margin: 18px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box.verde { border-left-color: var(--verde-acento); }
+
+        .info-box.destacado {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            color: var(--blanco);
+            border-left: none;
+            border-radius: 8px;
+        }
+
+        .info-box.destacado h4 { color: var(--verde-acento); }
+        .info-box h4 { margin-top: 0; margin-bottom: 10px; }
+
+        /* QUOTE BOX */
+        .quote-box {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            color: var(--blanco);
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .quote-box blockquote {
+            font-size: 16pt;
+            font-weight: 600;
+            font-style: italic;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* COMPORTAMIENTO CARD */
+        .comportamiento-card {
+            background: var(--gris-claro);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid var(--verde-acento);
+        }
+
+        .comportamiento-card h4 {
+            color: var(--azul-principal);
+            font-size: 14pt;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comportamiento-num {
+            background: var(--verde-acento);
+            color: var(--blanco);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14pt;
+            font-weight: 700;
+        }
+
+        /* TABLAS */
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 10pt; }
+        th { background: var(--azul-principal); color: var(--blanco); padding: 12px 10px; text-align: left; font-weight: 600; }
+        td { padding: 10px; border-bottom: 1px solid var(--gris-medio); vertical-align: top; }
+        tr:nth-child(even) { background: var(--gris-claro); }
+
+        /* DO / DON'T */
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .do-box, .dont-box {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .do-box {
+            background: #e8f5e9;
+            border: 2px solid var(--verde-acento);
+        }
+
+        .dont-box {
+            background: #ffebee;
+            border: 2px solid #e53935;
+        }
+
+        .do-box h4 { color: #2e7d32; margin: 0 0 12px 0; }
+        .dont-box h4 { color: #c62828; margin: 0 0 12px 0; }
+
+        .do-box ul, .dont-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .do-box li, .dont-box li {
+            margin-bottom: 6px;
+        }
+
+        /* CHECKLIST */
+        .checklist {
+            background: var(--gris-claro);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .checklist h4 {
+            color: var(--azul-oscuro);
+            margin: 0 0 15px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gris-medio);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--azul-principal);
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        /* LISTAS */
+        ul, ol { margin: 12px 0 12px 25px; }
+        li { margin-bottom: 8px; }
+
+        /* BACK LINK */
+        .back-link {
+            display: inline-block;
+            color: var(--azul-principal);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        /* FOOTER */
+        .footer { margin-top: 50px; padding-top: 25px; border-top: 2px solid var(--gris-medio); text-align: center; }
+        .footer-logo { height: 35px; margin-bottom: 15px; }
+        .footer p { font-size: 9pt; color: #666; margin: 5px 0; }
+        .footer .slogan-footer { color: var(--verde-acento); font-weight: 700; font-size: 11pt; margin-top: 15px; }
+
+        /* PRINT */
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--verde-acento);
+            color: var(--blanco);
+            border: none;
+            padding: 14px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 198, 0, 0.35);
+            z-index: 1000;
+        }
+
+        .print-btn:hover { background: #00a800; }
+
+        .page-break { page-break-before: always; }
+
+        @media print {
+            .print-btn { display: none; }
+            .back-link { display: none; }
+            .container { padding: 15px 25px; }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Guardar como PDF</button>
+
+    <div class="container">
+        <a href="Plan_Estrategico_BP_2026.html" class="back-link">&larr; Volver al Plan Estrategico</a>
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="logo_vetacap.png" alt="Vetacap" class="logo">
+                <span class="slogan">EL FOCO ESTA EN VOS</span>
+            </div>
+            <div class="header-info">
+                <div class="doc-title">Modelo de Servicio</div>
+                <div>Banca Privada 2026</div>
+            </div>
+        </div>
+
+        <!-- INTRO -->
+        <div class="section">
+            <h2><span class="section-number">1</span>Nuestra Definicion de Servicio</h2>
+
+            <div class="quote-box">
+                <blockquote>"Acompanar al cliente en sus decisiones financieras con honestidad, anticipacion y cercania, hablando como pares."</blockquote>
+            </div>
+
+            <p>No vendemos productos. Construimos relaciones de confianza a largo plazo.</p>
+
+            <div class="info-box verde">
+                <h4>Principio Rector</h4>
+                <p>El producto es commodity (todos venden los mismos bonos, acciones, FCIs). El diferenciador real ES el servicio. El cliente de patrimonio alto detecta el "chamuyo" rapido. La honestidad brutal es nuestro diferenciador competitivo.</p>
+            </div>
+        </div>
+
+        <!-- 5 COMPORTAMIENTOS -->
+        <div class="section">
+            <h2><span class="section-number">2</span>Los 5 Comportamientos Vetacap</h2>
+
+            <div class="comportamiento-card">
+                <h4><span class="comportamiento-num">1</span>Respondemos Rapido</h4>
+                <table>
+                    <tr>
+                        <th>Segmento</th>
+                        <th>Tiempo Maximo de Respuesta</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Private</strong></td>
+                        <td>1 hora</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Premium</strong></td>
+                        <td>2 horas habiles</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preferente</strong></td>
+                        <td>4 horas habiles</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estandar/Inicial</strong></td>
+                        <td>24 horas habiles</td>
+                    </tr>
+                </table>
+                <p><strong>Regla:</strong> Si no tenemos la respuesta, respondemos igual: <em>"Lo estoy verificando, te confirmo en X tiempo."</em></p>
+            </div>
+
+            <div class="comportamiento-card">
+                <h4><span class="comportamiento-num">2</span>Nos Anticipamos</h4>
+                <ul>
+                    <li>Llamamos <strong>antes</strong> de que el cliente pregunte ante movimientos de mercado</li>
+                    <li>Avisamos vencimientos con 7 dias de anticipacion</li>
+                    <li>Comunicamos cambios regulatorios que lo afecten</li>
+                    <li>No esperamos que nos busquen</li>
+                </ul>
+                <div class="do-dont-grid" style="margin-top: 15px;">
+                    <div class="dont-box">
+                        <h4>NO hacer</h4>
+                        <p>Esperar a que el cliente llame preocupado por una caida</p>
+                    </div>
+                    <div class="do-box">
+                        <h4>SI hacer</h4>
+                        <p><em>"Vi que el bono X bajo 3%, tu cartera esta cubierta porque diversificamos en Y. No tenes que hacer nada, pero queria que lo supieras."</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comportamiento-card">
+                <h4><span class="comportamiento-num">3</span>No Chamuyamos</h4>
+                <ul>
+                    <li><strong>Nunca</strong> prometemos rendimientos especificos</li>
+                    <li>Explicamos escenarios (conservador, base, optimista)</li>
+                    <li>Si algo no conviene, lo decimos aunque perdamos la comision</li>
+                    <li>Reconocemos cuando no sabemos algo</li>
+                </ul>
+                <div class="do-dont-grid" style="margin-top: 15px;">
+                    <div class="dont-box">
+                        <h4>Frases que NO usamos</h4>
+                        <ul>
+                            <li>"Te garantizo X% de rendimiento"</li>
+                            <li>"Esto no puede salir mal"</li>
+                            <li>"Todos estan comprando esto"</li>
+                            <li>"Confia en mi"</li>
+                        </ul>
+                    </div>
+                    <div class="do-box">
+                        <h4>Frases que SI usamos</h4>
+                        <ul>
+                            <li>"En un escenario base, podria rendir entre X e Y"</li>
+                            <li>"El riesgo principal de esto es..."</li>
+                            <li>"Honestamente, para tu perfil no te recomiendo..."</li>
+                            <li>"No tengo la respuesta ahora, lo verifico y te confirmo"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comportamiento-card">
+                <h4><span class="comportamiento-num">4</span>Nos Hacemos Cargo</h4>
+                <ul>
+                    <li>Si hay un error, lo reconocemos inmediatamente</li>
+                    <li>No buscamos culpables, buscamos soluciones</li>
+                    <li>Proponemos alternativa o compensacion cuando corresponde</li>
+                    <li>Hacemos seguimiento hasta que este resuelto</li>
+                </ul>
+                <div class="info-box" style="margin-top: 15px;">
+                    <h4>Protocolo de Error</h4>
+                    <ol>
+                        <li>Reconocer el error sin excusas</li>
+                        <li>Explicar que paso (sin tecnicismos)</li>
+                        <li>Proponer solucion concreta</li>
+                        <li>Ejecutar la solucion</li>
+                        <li>Hacer seguimiento para confirmar que quedo resuelto</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="comportamiento-card">
+                <h4><span class="comportamiento-num">5</span>Hablamos como Pares</h4>
+                <ul>
+                    <li>Sin jerga financiera innecesaria</li>
+                    <li>Sin posicion de superioridad</li>
+                    <li>Escuchamos mas de lo que hablamos</li>
+                    <li>Recordamos el contexto personal del cliente</li>
+                </ul>
+                <div class="do-dont-grid" style="margin-top: 15px;">
+                    <div class="dont-box">
+                        <h4>El cliente NO es</h4>
+                        <ul>
+                            <li>Un numero de cuenta</li>
+                            <li>Un AUM</li>
+                            <li>Una comision</li>
+                        </ul>
+                    </div>
+                    <div class="do-box">
+                        <h4>El cliente ES</h4>
+                        <ul>
+                            <li>Una persona con objetivos especificos</li>
+                            <li>Alguien que confia su patrimonio en nosotros</li>
+                            <li>Un par que merece explicaciones claras</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- QUE VALORAN -->
+        <div class="section">
+            <h2><span class="section-number">3</span>Que Valoran Nuestros Clientes</h2>
+
+            <p>Basado en el perfil de nuestro cliente objetivo (dueno de PyME, USD 100K-500K):</p>
+
+            <table>
+                <tr>
+                    <th>Lo que MAS valoran</th>
+                    <th>Lo que MENOS les importa</th>
+                </tr>
+                <tr>
+                    <td>Tranquilidad</td>
+                    <td>Sofisticacion de productos</td>
+                </tr>
+                <tr>
+                    <td>Que alguien se ocupe</td>
+                    <td>Acceso a 50 instrumentos</td>
+                </tr>
+                <tr>
+                    <td>Respuesta cuando la necesitan</td>
+                    <td>Reportes tecnicos complejos</td>
+                </tr>
+                <tr>
+                    <td>Honestidad sobre riesgos</td>
+                    <td>Promesas de altos rendimientos</td>
+                </tr>
+                <tr>
+                    <td>Sentirse cuidados</td>
+                    <td>Eventos lujosos</td>
+                </tr>
+            </table>
+
+            <div class="info-box destacado">
+                <h4>Insight Clave</h4>
+                <p>Nuestro cliente no quiere ser experto en finanzas. Quiere confiar en alguien que se ocupe por el.</p>
+            </div>
+        </div>
+
+        <!-- MODELO DE CONTACTO -->
+        <div class="section">
+            <h2><span class="section-number">4</span>Modelo de Contacto por Segmento</h2>
+
+            <table>
+                <tr>
+                    <th>Segmento</th>
+                    <th>Frecuencia</th>
+                    <th>Tipo de Contacto</th>
+                    <th>Extras</th>
+                </tr>
+                <tr style="background: rgba(0, 198, 0, 0.12);">
+                    <td><strong>Preferente</strong> (FOCO)</td>
+                    <td>Minimo 1/mes proactivo</td>
+                    <td>Llamada o reunion + WhatsApp</td>
+                    <td>Research mensual, eventos, regalo fin de ano</td>
+                </tr>
+                <tr>
+                    <td><strong>Premium</strong></td>
+                    <td>Minimo 2/mes proactivos</td>
+                    <td>Reunion fisica/virtual + seguimiento</td>
+                    <td>Eventos trimestrales, ONs primarias, linea directa</td>
+                </tr>
+                <tr>
+                    <td><strong>Private</strong></td>
+                    <td>A demanda + semanal minimo</td>
+                    <td>Disponibilidad total, linea socios</td>
+                    <td>Experiencias exclusivas, acceso a socios</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CHECKLIST -->
+        <div class="section">
+            <h2><span class="section-number">5</span>Checklist de Interaccion</h2>
+
+            <div class="checklist">
+                <h4>Antes de cada contacto con cliente Preferente+</h4>
+                <div class="checklist-item"><div class="checkbox"></div> Revise su cartera actual y performance</div>
+                <div class="checklist-item"><div class="checkbox"></div> Se si tiene vencimientos proximos</div>
+                <div class="checklist-item"><div class="checkbox"></div> Conozco su contexto personal reciente (si lo compartio)</div>
+                <div class="checklist-item"><div class="checkbox"></div> Tengo preparada al menos 1 idea/oportunidad relevante</div>
+                <div class="checklist-item"><div class="checkbox"></div> Tengo claro que NO recomendarle segun su perfil</div>
+            </div>
+
+            <div class="checklist">
+                <h4>Despues de cada contacto</h4>
+                <div class="checklist-item"><div class="checkbox"></div> Documente en CRM los puntos clave</div>
+                <div class="checklist-item"><div class="checkbox"></div> Agende proximo contacto</div>
+                <div class="checklist-item"><div class="checkbox"></div> Si quedo algo pendiente, lo agende con fecha</div>
+            </div>
+        </div>
+
+        <!-- TONO Y PALABRAS -->
+        <div class="section">
+            <h2><span class="section-number">6</span>Palabras y Tono</h2>
+
+            <div class="do-dont-grid">
+                <div class="do-box">
+                    <h4>Usamos</h4>
+                    <ul>
+                        <li>"Tu cartera" (no "la cartera")</li>
+                        <li>"Te recomiendo" (con argumentos)</li>
+                        <li>"El riesgo es..." (transparencia)</li>
+                        <li>"No se, lo verifico" (honestidad)</li>
+                        <li>"Entiendo que..." (empatia)</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>No usamos</h4>
+                    <ul>
+                        <li>"El mercado" como excusa generica</li>
+                        <li>"Todos estan haciendo esto"</li>
+                        <li>"Confia en mi"</li>
+                        <li>Jerga tecnica sin explicar</li>
+                        <li>Diminutivos condescendientes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Tono General</h4>
+                <ul>
+                    <li><strong>Profesional pero cercano</strong></li>
+                    <li><strong>Directo, sin rodeos</strong></li>
+                    <li><strong>Seguro pero no arrogante</strong></li>
+                    <li><strong>Empatico sin ser servil</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DIFERENCIADOR -->
+        <div class="section">
+            <h2><span class="section-number">7</span>Diferenciador Competitivo</h2>
+
+            <h3>Por que un cliente elegiria Vetacap sobre un banco grande?</h3>
+
+            <table>
+                <tr>
+                    <th>Banco Grande</th>
+                    <th>Vetacap</th>
+                </tr>
+                <tr>
+                    <td>Ejecutivo rotativo</td>
+                    <td><strong>Mismo ejecutivo siempre</strong></td>
+                </tr>
+                <tr>
+                    <td>Atencion por ticket</td>
+                    <td><strong>Relacion personal</strong></td>
+                </tr>
+                <tr>
+                    <td>Productos empaquetados</td>
+                    <td><strong>Estrategia personalizada</strong></td>
+                </tr>
+                <tr>
+                    <td>Respuesta en dias</td>
+                    <td><strong>Respuesta en horas</strong></td>
+                </tr>
+                <tr>
+                    <td>Reuniones formales</td>
+                    <td><strong>Cafe o llamada cuando necesites</strong></td>
+                </tr>
+                <tr>
+                    <td>NPS promedio</td>
+                    <td><strong>NPS alto (aprovecharlo)</strong></td>
+                </tr>
+            </table>
+
+            <div class="info-box verde">
+                <h4>Nuestra Ventaja</h4>
+                <p>Somos chicos, flexibles, y el cliente habla con personas que deciden.</p>
+            </div>
+        </div>
+
+        <!-- METRICAS -->
+        <div class="section">
+            <h2><span class="section-number">8</span>Metricas de Servicio</h2>
+
+            <table>
+                <tr>
+                    <th>Metrica</th>
+                    <th>Target</th>
+                </tr>
+                <tr>
+                    <td>Tiempo promedio de respuesta (Preferente+)</td>
+                    <td><strong>&lt; 4 horas</strong></td>
+                </tr>
+                <tr>
+                    <td>Contactos proactivos/mes por cliente Preferente</td>
+                    <td><strong>&ge; 1</strong></td>
+                </tr>
+                <tr>
+                    <td>NPS del area</td>
+                    <td><strong>&gt; 70</strong></td>
+                </tr>
+                <tr>
+                    <td>Tasa de retencion</td>
+                    <td><strong>&gt; 90%</strong></td>
+                </tr>
+                <tr>
+                    <td>Quejas formales</td>
+                    <td><strong>0</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <img src="logo_vetacap.png" alt="Vetacap" class="footer-logo">
+            <p><strong>Basado en Reunion de Consejo 12/12/2025</strong></p>
+            <p>Banca Privada - Owner: John Gandolfo</p>
+            <p class="slogan-footer">EL FOCO ESTA EN VOS</p>
+        </div>
+    </div>
+</body>
+</html>

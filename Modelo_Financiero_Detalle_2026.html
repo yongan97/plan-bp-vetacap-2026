@@ -1,0 +1,856 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Financiero 2026 - Detalle Completo | Vetacap Banca Privada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-principal: #1036E2;
+            --verde-acento: #00C600;
+            --azul-oscuro: #021751;
+            --blanco: #FFFFFF;
+            --negro: #000000;
+            --gris-claro: #f5f7fa;
+            --gris-medio: #e1e5eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10pt;
+            line-height: 1.5;
+            color: var(--negro);
+            background: var(--blanco);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0 20px 0;
+            border-bottom: 3px solid var(--azul-principal);
+            margin-bottom: 30px;
+        }
+
+        .logo { height: 45px; }
+        .slogan { color: var(--verde-acento); font-size: 11pt; font-weight: 700; }
+
+        .header-info { text-align: right; }
+        .header-info .doc-title { font-size: 14pt; font-weight: 700; color: var(--azul-principal); }
+
+        h1 {
+            color: var(--azul-principal);
+            font-size: 24pt;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--azul-principal);
+            font-size: 16pt;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--verde-acento);
+        }
+
+        h3 {
+            color: var(--azul-oscuro);
+            font-size: 12pt;
+            margin: 20px 0 10px 0;
+        }
+
+        p { margin-bottom: 10px; }
+
+        .intro {
+            background: var(--gris-claro);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--azul-principal);
+        }
+
+        .principio-box {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-oscuro) 100%);
+            color: var(--blanco);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .principio-box h3 { color: var(--verde-acento); margin-top: 0; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 9pt;
+        }
+
+        th {
+            background: var(--azul-principal);
+            color: var(--blanco);
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid var(--gris-medio);
+        }
+
+        tr:nth-child(even) { background: var(--gris-claro); }
+
+        .highlight-row { background: rgba(0, 198, 0, 0.15) !important; font-weight: 600; }
+        .negative { color: #c62828; }
+        .positive { color: var(--verde-acento); }
+        .neutral { color: var(--azul-principal); }
+
+        .scenario-header {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 25px 0 15px 0;
+        }
+
+        .scenario-header.conservador {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+        }
+
+        .scenario-header.base {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid var(--azul-principal);
+        }
+
+        .scenario-header.optimista {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid var(--verde-acento);
+        }
+
+        .scenario-header h3 { margin: 0 0 5px 0; }
+        .scenario-header p { margin: 0; font-size: 10pt; }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: var(--blanco);
+            border: 2px solid var(--gris-medio);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .metric-card.conservador { border-color: #ff9800; }
+        .metric-card.base { border-color: var(--azul-principal); }
+        .metric-card.optimista { border-color: var(--verde-acento); }
+
+        .metric-value {
+            font-size: 20pt;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .metric-card.conservador .metric-value { color: #e65100; }
+        .metric-card.base .metric-value { color: var(--azul-principal); }
+        .metric-card.optimista .metric-value { color: var(--verde-acento); }
+
+        .metric-label { font-size: 8pt; color: #666; text-transform: uppercase; }
+
+        .triggers-table th { background: var(--azul-oscuro); }
+
+        .back-link {
+            display: inline-block;
+            background: var(--azul-principal);
+            color: var(--blanco);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover { background: var(--azul-oscuro); }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--verde-acento);
+            color: var(--blanco);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 10pt;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 198, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .print-btn:hover { background: #00a800; }
+
+        .summary-box {
+            background: var(--gris-claro);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .formula-box {
+            background: #f8f9fa;
+            border: 1px solid var(--gris-medio);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 9pt;
+            margin: 15px 0;
+        }
+
+        .page-break { page-break-before: always; }
+
+        @media print {
+            .print-btn, .back-link { display: none; }
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Imprimir / Guardar PDF</button>
+
+    <div class="container">
+        <a href="Plan_Estrategico_BP_2026.html" class="back-link">← Volver al Plan Estratégico</a>
+
+        <div class="header">
+            <div>
+                <img src="logo_vetacap.png" alt="Vetacap" class="logo">
+                <div class="slogan">EL FOCO ESTÁ EN VOS</div>
+            </div>
+            <div class="header-info">
+                <div class="doc-title">Modelo Financiero - Detalle Completo</div>
+                <div>Banca Privada 2026</div>
+            </div>
+        </div>
+
+        <h1>Modelo Financiero 2026</h1>
+        <p style="font-size: 12pt; color: #666;">Proyecciones detalladas mes a mes para los tres escenarios</p>
+
+        <div class="intro">
+            <p>Este documento presenta el detalle completo del modelo financiero de Banca Privada 2026, incluyendo proyecciones de AUM, revenue, costos y resultados para cada escenario.</p>
+            <p><strong>Fecha de creación:</strong> Diciembre 2025 | <strong>Versión:</strong> 4.0</p>
+        </div>
+
+        <!-- PRINCIPIO RECTOR -->
+        <div class="principio-box">
+            <h3>Principio Rector: Costos Atados a Resultados</h3>
+            <p>Los costos extra (más allá del equipo base) se "desbloquean" según el performance del área. Solo se invierte cuando hay resultados que lo soporten.</p>
+        </div>
+
+        <!-- TRIGGERS -->
+        <h2>Reglas de Desbloqueo (Triggers)</h2>
+        <table class="triggers-table">
+            <tr>
+                <th>Trigger (Resultado Neto)</th>
+                <th>Qué se Desbloquea</th>
+                <th>Costo Mensual</th>
+            </tr>
+            <tr>
+                <td><strong>AUM > USD 25MM</strong></td>
+                <td>Contratación Comercial Jr</td>
+                <td>USD 3,000</td>
+            </tr>
+            <tr>
+                <td><strong>AUM > USD 40MM</strong></td>
+                <td>Marketing básico</td>
+                <td>USD 2,000</td>
+            </tr>
+            <tr>
+                <td><strong>AUM > USD 50MM</strong></td>
+                <td>Contratación Comercial Sr</td>
+                <td>USD 5,000</td>
+            </tr>
+            <tr>
+                <td><strong>AUM > USD 55MM</strong></td>
+                <td>Marketing agresivo</td>
+                <td>USD 6,000</td>
+            </tr>
+            <tr>
+                <td><strong>Resultado mensual > USD 5K</strong></td>
+                <td>Eventos/charlas/materiales</td>
+                <td>Proporcional</td>
+            </tr>
+        </table>
+
+        <!-- DEFINICIÓN DE ESCENARIOS -->
+        <h2>Definición de Escenarios</h2>
+        <table>
+            <tr>
+                <th>Parámetro</th>
+                <th>Conservador</th>
+                <th>Base</th>
+                <th>Optimista</th>
+            </tr>
+            <tr>
+                <td><strong>Clientes nuevos/mes</strong></td>
+                <td>4</td>
+                <td>8</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td><strong>Ticket promedio nuevos</strong></td>
+                <td>USD 200,000</td>
+                <td>USD 300,000</td>
+                <td>USD 500,000</td>
+            </tr>
+            <tr>
+                <td><strong>AUM nuevo/mes</strong></td>
+                <td>USD 800,000</td>
+                <td>USD 2,400,000</td>
+                <td>USD 6,000,000</td>
+            </tr>
+            <tr>
+                <td><strong>% del AUM en FCI</strong></td>
+                <td>10%</td>
+                <td>15%</td>
+                <td>30%</td>
+            </tr>
+            <tr>
+                <td><strong>Frecuencia ops/año</strong></td>
+                <td>2.0</td>
+                <td>2.0</td>
+                <td>2.0</td>
+            </tr>
+            <tr>
+                <td><strong>Fee FCI (TNA)</strong></td>
+                <td>1.5%</td>
+                <td>1.5%</td>
+                <td>1.5%</td>
+            </tr>
+            <tr>
+                <td><strong>Comisión por operación</strong></td>
+                <td>0.5%</td>
+                <td>0.5%</td>
+                <td>0.5%</td>
+            </tr>
+        </table>
+
+        <h3>Fórmulas de Cálculo</h3>
+        <div class="formula-box">
+            Revenue FCI Bruto = AUM × % en FCI × 1.5% / 12<br>
+            Revenue Comisiones Bruto = AUM × (1 - % FCI) × 2.0 × 0.5% / 12<br>
+            <strong>Revenue Neto = Revenue Bruto × 50%</strong> (el 50% va a referenciadores)
+        </div>
+
+        
+        <!-- DISTRIBUCIÓN DE CAPTACIÓN -->
+        <h2>Distribución de Captación (Escenario Base)</h2>
+        
+        <div style="display: flex; gap: 40px; margin: 20px 0;">
+            <div style="flex: 1;">
+                <h3>Por Canal de Origen</h3>
+                <svg viewBox="0 0 200 200" style="max-width: 200px;">
+                    <circle cx="100" cy="100" r="80" fill="#e3f2fd"/>
+                    <path d="M100,100 L100,20 A80,80 0 0,1 169.28,146.18 Z" fill="#1036E2"/>
+                    <path d="M100,100 L169.28,146.18 A80,80 0 0,1 30.72,146.18 Z" fill="#00C600"/>
+                    <path d="M100,100 L30.72,146.18 A80,80 0 0,1 100,20 Z" fill="#ff9800"/>
+                </svg>
+                <table style="font-size: 9pt; margin-top: 10px;">
+                    <tr><td style="color: #ff9800;">■</td><td>Crosselling</td><td><strong>31%</strong></td><td>30 cli</td></tr>
+                    <tr><td style="color: #00C600;">■</td><td>Referidos</td><td><strong>46%</strong></td><td>44 cli</td></tr>
+                    <tr><td style="color: #1036E2;">■</td><td>Nuevos</td><td><strong>23%</strong></td><td>22 cli</td></tr>
+                </table>
+            </div>
+            <div style="flex: 1;">
+                <h3>Por Segmento (Foco Preferente)</h3>
+                <table>
+                    <tr><th>Segmento</th><th>Rango AUM</th><th>% Captación</th></tr>
+                    <tr><td>Inicial</td><td>&lt; USD 50K</td><td>5%</td></tr>
+                    <tr><td>Estándar</td><td>USD 50K - 100K</td><td>15%</td></tr>
+                    <tr style="background: rgba(0, 198, 0, 0.2); font-weight: 600;"><td>Preferente</td><td>USD 100K - 500K</td><td><strong>50%</strong></td></tr>
+                    <tr><td>Premium</td><td>USD 500K - 5M</td><td>25%</td></tr>
+                    <tr><td>Private</td><td>&gt; USD 5M</td><td>5%</td></tr>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- ESCENARIO CONSERVADOR -->
+        <div class="scenario-header conservador">
+            <h3>Escenario Conservador</h3>
+            <p>4 clientes/mes × USD 200K = USD 800K AUM nuevo/mes</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card conservador">
+                <div class="metric-value">$39.6M</div>
+                <div class="metric-label">AUM Dic 2026</div>
+            </div>
+            <div class="metric-card conservador">
+                <div class="metric-value">332</div>
+                <div class="metric-label">Clientes</div>
+            </div>
+            <div class="metric-card conservador">
+                <div class="metric-value">$183K</div>
+                <div class="metric-label">Revenue</div>
+            </div>
+            <div class="metric-card conservador">
+                <div class="metric-value">+$8K</div>
+                <div class="metric-label">Resultado</div>
+            </div>
+        </div>
+
+        <h3>Proyección de AUM Mensual</h3>
+        <table>
+            <tr>
+                <th>Mes</th>
+                <th>AUM Inicial</th>
+                <th>AUM Nuevo</th>
+                <th>AUM Total</th>
+                <th>Clientes</th>
+                <th>Trigger</th>
+            </tr>
+            <tr><td>Ene 2026</td><td>20,000,000</td><td>450,000</td><td>20,450,000</td><td>353</td><td>-</td></tr>
+            <tr><td>Feb 2026</td><td>20,450,000</td><td>450,000</td><td>20,900,000</td><td>356</td><td>-</td></tr>
+            <tr><td>Mar 2026</td><td>20,900,000</td><td>450,000</td><td>21,350,000</td><td>359</td><td>-</td></tr>
+            <tr><td>Abr 2026</td><td>21,350,000</td><td>450,000</td><td>21,800,000</td><td>362</td><td>-</td></tr>
+            <tr><td>May 2026</td><td>21,800,000</td><td>450,000</td><td>22,250,000</td><td>365</td><td>-</td></tr>
+            <tr><td>Jun 2026</td><td>22,250,000</td><td>450,000</td><td>22,700,000</td><td>368</td><td>-</td></tr>
+            <tr><td>Jul 2026</td><td>22,700,000</td><td>450,000</td><td>23,150,000</td><td>371</td><td>-</td></tr>
+            <tr><td>Ago 2026</td><td>23,150,000</td><td>450,000</td><td>23,600,000</td><td>374</td><td>-</td></tr>
+            <tr><td>Sep 2026</td><td>23,600,000</td><td>450,000</td><td>24,050,000</td><td>377</td><td>-</td></tr>
+            <tr><td>Oct 2026</td><td>24,050,000</td><td>450,000</td><td>24,500,000</td><td>380</td><td>-</td></tr>
+            <tr><td>Nov 2026</td><td>24,500,000</td><td>450,000</td><td>24,950,000</td><td>383</td><td>-</td></tr>
+            <tr class="highlight-row"><td>Dic 2026</td><td>24,950,000</td><td>450,000</td><td>25,400,000</td><td>386</td><td>AUM>25MM</td></tr>
+        </table>
+
+        <h3>P&L Mensual - Conservador</h3>
+        <table>
+            <tr>
+                <th>Mes</th>
+                <th>AUM Total</th>
+                <th>Rev FCI</th>
+                <th>Rev Comis</th>
+                <th>Revenue</th>
+                <th>Costos</th>
+                <th>Resultado</th>
+                <th>Acumulado</th>
+            </tr>
+            <tr><td>Ene</td><td>20,450,000</td><td>2,556</td><td>3,834</td><td>6,391</td><td>15,620</td><td class="negative">-9,229</td><td class="negative">-9,229</td></tr>
+            <tr><td>Feb</td><td>20,900,000</td><td>2,613</td><td>3,919</td><td>6,531</td><td>15,620</td><td class="negative">-9,089</td><td class="negative">-18,318</td></tr>
+            <tr><td>Mar</td><td>21,350,000</td><td>2,669</td><td>4,003</td><td>6,672</td><td>15,620</td><td class="negative">-8,948</td><td class="negative">-27,266</td></tr>
+            <tr><td>Abr</td><td>21,800,000</td><td>2,725</td><td>4,088</td><td>6,813</td><td>15,620</td><td class="negative">-8,807</td><td class="negative">-36,073</td></tr>
+            <tr><td>May</td><td>22,250,000</td><td>2,781</td><td>4,172</td><td>6,953</td><td>15,620</td><td class="negative">-8,667</td><td class="negative">-44,740</td></tr>
+            <tr><td>Jun</td><td>22,700,000</td><td>2,838</td><td>4,256</td><td>7,094</td><td>15,620</td><td class="negative">-8,526</td><td class="negative">-53,266</td></tr>
+            <tr><td>Jul</td><td>23,150,000</td><td>2,894</td><td>4,341</td><td>7,234</td><td>15,620</td><td class="negative">-8,386</td><td class="negative">-61,652</td></tr>
+            <tr><td>Ago</td><td>23,600,000</td><td>2,950</td><td>4,425</td><td>7,375</td><td>15,620</td><td class="negative">-8,245</td><td class="negative">-69,897</td></tr>
+            <tr><td>Sep</td><td>24,050,000</td><td>3,006</td><td>4,509</td><td>7,516</td><td>15,620</td><td class="negative">-8,104</td><td class="negative">-78,001</td></tr>
+            <tr><td>Oct</td><td>24,500,000</td><td>3,063</td><td>4,594</td><td>7,656</td><td>15,620</td><td class="negative">-7,964</td><td class="negative">-85,965</td></tr>
+            <tr><td>Nov</td><td>24,950,000</td><td>3,119</td><td>4,678</td><td>7,797</td><td>15,620</td><td class="negative">-7,823</td><td class="negative">-93,788</td></tr>
+            <tr class="highlight-row"><td>Dic</td><td>25,400,000</td><td>3,175</td><td>4,763</td><td>7,938</td><td>15,620</td><td class="negative">-7,682</td><td class="negative">-101,470</td></tr>
+            <tr style="background: #e3f2fd; font-weight: 700;">
+                <td colspan="4">TOTAL AÑO</td>
+                <td>85,969</td>
+                <td>187,440</td>
+                <td class="negative">-101,471</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div class="summary-box">
+            <strong>Resultado Conservador:</strong> Pérdida de USD 101,471 | Margen: -118%<br>
+            <strong>Estado:</strong> Estructura mínima mantenida, sin inversión adicional.<br>
+            <strong>Nota:</strong> Este es el "piso" de pérdida, el costo de mantener el área operativa sin crecimiento.
+        </div>
+
+        
+        <!-- DISTRIBUCIÓN DE CAPTACIÓN -->
+        <h2>Distribución de Captación (Escenario Base)</h2>
+        
+        <div style="display: flex; gap: 40px; margin: 20px 0;">
+            <div style="flex: 1;">
+                <h3>Por Canal de Origen</h3>
+                <svg viewBox="0 0 200 200" style="max-width: 200px;">
+                    <circle cx="100" cy="100" r="80" fill="#e3f2fd"/>
+                    <path d="M100,100 L100,20 A80,80 0 0,1 169.28,146.18 Z" fill="#1036E2"/>
+                    <path d="M100,100 L169.28,146.18 A80,80 0 0,1 30.72,146.18 Z" fill="#00C600"/>
+                    <path d="M100,100 L30.72,146.18 A80,80 0 0,1 100,20 Z" fill="#ff9800"/>
+                </svg>
+                <table style="font-size: 9pt; margin-top: 10px;">
+                    <tr><td style="color: #ff9800;">■</td><td>Crosselling</td><td><strong>31%</strong></td><td>30 cli</td></tr>
+                    <tr><td style="color: #00C600;">■</td><td>Referidos</td><td><strong>46%</strong></td><td>44 cli</td></tr>
+                    <tr><td style="color: #1036E2;">■</td><td>Nuevos</td><td><strong>23%</strong></td><td>22 cli</td></tr>
+                </table>
+            </div>
+            <div style="flex: 1;">
+                <h3>Por Segmento (Foco Preferente)</h3>
+                <table>
+                    <tr><th>Segmento</th><th>Rango AUM</th><th>% Captación</th></tr>
+                    <tr><td>Inicial</td><td>&lt; USD 50K</td><td>5%</td></tr>
+                    <tr><td>Estándar</td><td>USD 50K - 100K</td><td>15%</td></tr>
+                    <tr style="background: rgba(0, 198, 0, 0.2); font-weight: 600;"><td>Preferente</td><td>USD 100K - 500K</td><td><strong>50%</strong></td></tr>
+                    <tr><td>Premium</td><td>USD 500K - 5M</td><td>25%</td></tr>
+                    <tr><td>Private</td><td>&gt; USD 5M</td><td>5%</td></tr>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- ESCENARIO BASE -->
+        <div class="scenario-header base">
+            <h3>Escenario Base (Recomendado)</h3>
+            <p>8 clientes/mes × USD 300K = USD 2.4MM AUM nuevo/mes</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card base">
+                <div class="metric-value">$58.8M</div>
+                <div class="metric-label">AUM Dic 2026</div>
+            </div>
+            <div class="metric-card base">
+                <div class="metric-value">380</div>
+                <div class="metric-label">Clientes</div>
+            </div>
+            <div class="metric-card base">
+                <div class="metric-value">$239K</div>
+                <div class="metric-label">Revenue</div>
+            </div>
+            <div class="metric-card base">
+                <div class="metric-value">+$64K</div>
+                <div class="metric-label">Ganancia</div>
+            </div>
+        </div>
+
+        <h3>Proyección de AUM Mensual</h3>
+        <table>
+            <tr>
+                <th>Mes</th>
+                <th>AUM Inicial</th>
+                <th>AUM Nuevo</th>
+                <th>AUM Total</th>
+                <th>Clientes</th>
+                <th>Trigger</th>
+            </tr>
+            <tr><td>Ene 2026</td><td>20,000,000</td><td>1,800,000</td><td>21,800,000</td><td>356</td><td>-</td></tr>
+            <tr><td>Feb 2026</td><td>21,800,000</td><td>1,800,000</td><td>23,600,000</td><td>362</td><td>-</td></tr>
+            <tr class="highlight-row"><td>Mar 2026</td><td>23,600,000</td><td>1,800,000</td><td>25,400,000</td><td>368</td><td>AUM>25MM</td></tr>
+            <tr><td>Abr 2026</td><td>25,400,000</td><td>1,800,000</td><td>27,200,000</td><td>374</td><td>-</td></tr>
+            <tr><td>May 2026</td><td>27,200,000</td><td>1,800,000</td><td>29,000,000</td><td>380</td><td>-</td></tr>
+            <tr><td>Jun 2026</td><td>29,000,000</td><td>1,800,000</td><td>30,800,000</td><td>386</td><td>-</td></tr>
+            <tr class="highlight-row"><td>Jul 2026</td><td>30,800,000</td><td>1,800,000</td><td>32,600,000</td><td>392</td><td>+Comercial Jr</td></tr>
+            <tr><td>Ago 2026</td><td>32,600,000</td><td>1,800,000</td><td>34,400,000</td><td>398</td><td>-</td></tr>
+            <tr><td>Sep 2026</td><td>34,400,000</td><td>1,800,000</td><td>36,200,000</td><td>404</td><td>-</td></tr>
+            <tr><td>Oct 2026</td><td>36,200,000</td><td>1,800,000</td><td>38,000,000</td><td>410</td><td>-</td></tr>
+            <tr><td>Nov 2026</td><td>38,000,000</td><td>1,800,000</td><td>39,800,000</td><td>416</td><td>-</td></tr>
+            <tr class="highlight-row"><td>Dic 2026</td><td>39,800,000</td><td>1,800,000</td><td>41,600,000</td><td>422</td><td>AUM>40MM</td></tr>
+        </table>
+
+        <h3>P&L Mensual - Base</h3>
+        <table>
+            <tr>
+                <th>Mes</th>
+                <th>AUM Total</th>
+                <th>Revenue</th>
+                <th>Costos</th>
+                <th>Resultado</th>
+                <th>Acumulado</th>
+                <th>Nota</th>
+            </tr>
+            <tr><td>Ene</td><td>21,800,000</td><td>11,808</td><td>15,620</td><td class="negative">-3,812</td><td class="negative">-3,812</td><td></td></tr>
+            <tr><td>Feb</td><td>23,600,000</td><td>12,783</td><td>15,620</td><td class="negative">-2,837</td><td class="negative">-6,649</td><td></td></tr>
+            <tr><td>Mar</td><td>25,400,000</td><td>13,758</td><td>15,620</td><td class="negative">-1,862</td><td class="negative">-8,511</td><td>AUM>25MM</td></tr>
+            <tr><td>Abr</td><td>27,200,000</td><td>14,733</td><td>15,620</td><td class="negative">-887</td><td class="negative">-9,398</td><td></td></tr>
+            <tr class="highlight-row"><td>May</td><td>29,000,000</td><td>15,708</td><td>15,620</td><td class="positive">+88</td><td class="negative">-9,310</td><td>1er mes (+)</td></tr>
+            <tr><td>Jun</td><td>30,800,000</td><td>16,683</td><td>15,620</td><td class="positive">+1,063</td><td class="negative">-8,247</td><td></td></tr>
+            <tr><td>Jul</td><td>32,600,000</td><td>17,658</td><td>18,775</td><td class="negative">-1,117</td><td class="negative">-9,364</td><td>+Comercial Jr</td></tr>
+            <tr><td>Ago</td><td>34,400,000</td><td>18,633</td><td>18,775</td><td class="negative">-142</td><td class="negative">-9,506</td><td></td></tr>
+            <tr><td>Sep</td><td>36,200,000</td><td>19,608</td><td>18,775</td><td class="positive">+833</td><td class="negative">-8,673</td><td></td></tr>
+            <tr><td>Oct</td><td>38,000,000</td><td>20,583</td><td>18,775</td><td class="positive">+1,808</td><td class="negative">-6,865</td><td></td></tr>
+            <tr><td>Nov</td><td>39,800,000</td><td>21,558</td><td>18,775</td><td class="positive">+2,783</td><td class="negative">-4,082</td><td></td></tr>
+            <tr><td>Dic</td><td>41,600,000</td><td>22,533</td><td>18,775</td><td class="positive">+3,758</td><td class="negative">-324</td><td>AUM>40MM</td></tr>
+            <tr style="background: #e3f2fd; font-weight: 700;">
+                <td colspan="2">TOTAL AÑO</td>
+                <td>206,048</td>
+                <td>206,370</td>
+                <td class="neutral">-322</td>
+                <td colspan="2">BREAK-EVEN</td>
+            </tr>
+        </table>
+
+        <div class="summary-box">
+            <strong>Resultado Base:</strong> -USD 322 (prácticamente break-even) | Margen: ~0%<br>
+            <strong>Estado:</strong> Equilibrio logrado con inversión controlada atada a resultados.<br>
+            <strong>Triggers alcanzados:</strong> Comercial Jr en Jul (AUM>25MM en Mar), Marketing habilitado en Dic (no ejecutado).<br>
+            <strong>Headcount fin de año:</strong> 5 personas
+        </div>
+
+        
+        <!-- DISTRIBUCIÓN DE CAPTACIÓN -->
+        <h2>Distribución de Captación (Escenario Base)</h2>
+        
+        <div style="display: flex; gap: 40px; margin: 20px 0;">
+            <div style="flex: 1;">
+                <h3>Por Canal de Origen</h3>
+                <svg viewBox="0 0 200 200" style="max-width: 200px;">
+                    <circle cx="100" cy="100" r="80" fill="#e3f2fd"/>
+                    <path d="M100,100 L100,20 A80,80 0 0,1 169.28,146.18 Z" fill="#1036E2"/>
+                    <path d="M100,100 L169.28,146.18 A80,80 0 0,1 30.72,146.18 Z" fill="#00C600"/>
+                    <path d="M100,100 L30.72,146.18 A80,80 0 0,1 100,20 Z" fill="#ff9800"/>
+                </svg>
+                <table style="font-size: 9pt; margin-top: 10px;">
+                    <tr><td style="color: #ff9800;">■</td><td>Crosselling</td><td><strong>31%</strong></td><td>30 cli</td></tr>
+                    <tr><td style="color: #00C600;">■</td><td>Referidos</td><td><strong>46%</strong></td><td>44 cli</td></tr>
+                    <tr><td style="color: #1036E2;">■</td><td>Nuevos</td><td><strong>23%</strong></td><td>22 cli</td></tr>
+                </table>
+            </div>
+            <div style="flex: 1;">
+                <h3>Por Segmento (Foco Preferente)</h3>
+                <table>
+                    <tr><th>Segmento</th><th>Rango AUM</th><th>% Captación</th></tr>
+                    <tr><td>Inicial</td><td>&lt; USD 50K</td><td>5%</td></tr>
+                    <tr><td>Estándar</td><td>USD 50K - 100K</td><td>15%</td></tr>
+                    <tr style="background: rgba(0, 198, 0, 0.2); font-weight: 600;"><td>Preferente</td><td>USD 100K - 500K</td><td><strong>50%</strong></td></tr>
+                    <tr><td>Premium</td><td>USD 500K - 5M</td><td>25%</td></tr>
+                    <tr><td>Private</td><td>&gt; USD 5M</td><td>5%</td></tr>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- ESCENARIO OPTIMISTA -->
+        <div class="scenario-header optimista">
+            <h3>Escenario Optimista</h3>
+            <p>12 clientes/mes × USD 500K = USD 6MM AUM nuevo/mes</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card optimista">
+                <div class="metric-value">$102M</div>
+                <div class="metric-label">AUM Dic 2026</div>
+            </div>
+            <div class="metric-card optimista">
+                <div class="metric-value">428</div>
+                <div class="metric-label">Clientes</div>
+            </div>
+            <div class="metric-card optimista">
+                <div class="metric-value">$380K</div>
+                <div class="metric-label">Revenue</div>
+            </div>
+            <div class="metric-card optimista">
+                <div class="metric-value">+$161K</div>
+                <div class="metric-label">Ganancia</div>
+            </div>
+        </div>
+
+        <h3>Proyección de AUM Mensual</h3>
+        <table>
+            <tr>
+                <th>Mes</th>
+                <th>AUM Inicial</th>
+                <th>AUM Nuevo</th>
+                <th>AUM Total</th>
+                <th>Clientes</th>
+                <th>Trigger</th>
+            </tr>
+            <tr class="highlight-row"><td>Ene 2026</td><td>20,000,000</td><td>6,000,000</td><td>26,000,000</td><td>362</td><td>AUM>25MM</td></tr>
+            <tr><td>Feb 2026</td><td>26,000,000</td><td>6,000,000</td><td>32,000,000</td><td>374</td><td>-</td></tr>
+            <tr><td>Mar 2026</td><td>32,000,000</td><td>6,000,000</td><td>38,000,000</td><td>386</td><td>-</td></tr>
+            <tr class="highlight-row"><td>Abr 2026</td><td>38,000,000</td><td>6,000,000</td><td>44,000,000</td><td>398</td><td>+Com Jr, AUM>40MM, +Mkt</td></tr>
+            <tr class="highlight-row"><td>May 2026</td><td>44,000,000</td><td>6,000,000</td><td>50,000,000</td><td>410</td><td>AUM>50MM</td></tr>
+            <tr class="highlight-row"><td>Jun 2026</td><td>50,000,000</td><td>6,000,000</td><td>56,000,000</td><td>422</td><td>+Com Sr, AUM>55MM, Mkt agresivo</td></tr>
+            <tr><td>Jul 2026</td><td>56,000,000</td><td>6,000,000</td><td>62,000,000</td><td>434</td><td>-</td></tr>
+            <tr><td>Ago 2026</td><td>62,000,000</td><td>6,000,000</td><td>68,000,000</td><td>446</td><td>-</td></tr>
+            <tr><td>Sep 2026</td><td>68,000,000</td><td>6,000,000</td><td>74,000,000</td><td>458</td><td>-</td></tr>
+            <tr><td>Oct 2026</td><td>74,000,000</td><td>6,000,000</td><td>80,000,000</td><td>470</td><td>-</td></tr>
+            <tr><td>Nov 2026</td><td>80,000,000</td><td>6,000,000</td><td>86,000,000</td><td>482</td><td>-</td></tr>
+            <tr><td>Dic 2026</td><td>86,000,000</td><td>6,000,000</td><td>92,000,000</td><td>494</td><td>-</td></tr>
+        </table>
+
+        <h3>P&L Mensual - Optimista</h3>
+        <table>
+            <tr>
+                <th>Mes</th>
+                <th>AUM Total</th>
+                <th>Revenue</th>
+                <th>Costos</th>
+                <th>Resultado</th>
+                <th>Acumulado</th>
+                <th>Nota</th>
+            </tr>
+            <tr><td>Ene</td><td>26,000,000</td><td>24,917</td><td>15,620</td><td class="positive">+9,297</td><td class="positive">+9,297</td><td>AUM>25MM</td></tr>
+            <tr><td>Feb</td><td>32,000,000</td><td>30,667</td><td>15,620</td><td class="positive">+15,047</td><td class="positive">+24,344</td><td></td></tr>
+            <tr><td>Mar</td><td>38,000,000</td><td>36,417</td><td>15,620</td><td class="positive">+20,797</td><td class="positive">+45,141</td><td></td></tr>
+            <tr><td>Abr</td><td>44,000,000</td><td>42,167</td><td>25,608</td><td class="positive">+16,559</td><td class="positive">+61,700</td><td>+Com Jr, +Mkt</td></tr>
+            <tr><td>May</td><td>50,000,000</td><td>47,917</td><td>25,608</td><td class="positive">+22,309</td><td class="positive">+84,009</td><td>AUM>50MM</td></tr>
+            <tr><td>Jun</td><td>56,000,000</td><td>53,667</td><td>30,763</td><td class="positive">+22,904</td><td class="positive">+106,913</td><td>+Com Sr</td></tr>
+            <tr><td>Jul</td><td>62,000,000</td><td>59,417</td><td>30,763</td><td class="positive">+28,654</td><td class="positive">+135,567</td><td></td></tr>
+            <tr><td>Ago</td><td>68,000,000</td><td>65,167</td><td>30,763</td><td class="positive">+34,404</td><td class="positive">+169,971</td><td></td></tr>
+            <tr><td>Sep</td><td>74,000,000</td><td>70,917</td><td>30,763</td><td class="positive">+40,154</td><td class="positive">+210,125</td><td></td></tr>
+            <tr><td>Oct</td><td>80,000,000</td><td>76,667</td><td>30,763</td><td class="positive">+45,904</td><td class="positive">+256,029</td><td></td></tr>
+            <tr><td>Nov</td><td>86,000,000</td><td>82,417</td><td>30,763</td><td class="positive">+51,654</td><td class="positive">+307,683</td><td></td></tr>
+            <tr><td>Dic</td><td>92,000,000</td><td>88,167</td><td>30,763</td><td class="positive">+57,404</td><td class="positive">+365,087</td><td></td></tr>
+            <tr style="background: #e8f5e9; font-weight: 700;">
+                <td colspan="2">TOTAL AÑO</td>
+                <td>678,499</td>
+                <td>316,420</td>
+                <td class="positive">+362,079</td>
+                <td colspan="2">ALTAMENTE RENTABLE</td>
+            </tr>
+        </table>
+
+        <div class="summary-box">
+            <strong>Resultado Optimista:</strong> +USD 161K | Margen: +53%<br>
+            <strong>Estado:</strong> Altamente rentable, inversión agresiva justificada por resultados.<br>
+            <strong>Triggers alcanzados:</strong> TODOS - Inversión completa desbloqueada.<br>
+            <strong>Headcount fin de año:</strong> 6 personas<br>
+            <strong>Marketing anual:</strong> USD 54,000 | <strong>Eventos:</strong> USD 10,000
+        </div>
+
+        
+        <!-- DISTRIBUCIÓN DE CAPTACIÓN -->
+        <h2>Distribución de Captación (Escenario Base)</h2>
+        
+        <div style="display: flex; gap: 40px; margin: 20px 0;">
+            <div style="flex: 1;">
+                <h3>Por Canal de Origen</h3>
+                <svg viewBox="0 0 200 200" style="max-width: 200px;">
+                    <circle cx="100" cy="100" r="80" fill="#e3f2fd"/>
+                    <path d="M100,100 L100,20 A80,80 0 0,1 169.28,146.18 Z" fill="#1036E2"/>
+                    <path d="M100,100 L169.28,146.18 A80,80 0 0,1 30.72,146.18 Z" fill="#00C600"/>
+                    <path d="M100,100 L30.72,146.18 A80,80 0 0,1 100,20 Z" fill="#ff9800"/>
+                </svg>
+                <table style="font-size: 9pt; margin-top: 10px;">
+                    <tr><td style="color: #ff9800;">■</td><td>Crosselling</td><td><strong>31%</strong></td><td>30 cli</td></tr>
+                    <tr><td style="color: #00C600;">■</td><td>Referidos</td><td><strong>46%</strong></td><td>44 cli</td></tr>
+                    <tr><td style="color: #1036E2;">■</td><td>Nuevos</td><td><strong>23%</strong></td><td>22 cli</td></tr>
+                </table>
+            </div>
+            <div style="flex: 1;">
+                <h3>Por Segmento (Foco Preferente)</h3>
+                <table>
+                    <tr><th>Segmento</th><th>Rango AUM</th><th>% Captación</th></tr>
+                    <tr><td>Inicial</td><td>&lt; USD 50K</td><td>5%</td></tr>
+                    <tr><td>Estándar</td><td>USD 50K - 100K</td><td>15%</td></tr>
+                    <tr style="background: rgba(0, 198, 0, 0.2); font-weight: 600;"><td>Preferente</td><td>USD 100K - 500K</td><td><strong>50%</strong></td></tr>
+                    <tr><td>Premium</td><td>USD 500K - 5M</td><td>25%</td></tr>
+                    <tr><td>Private</td><td>&gt; USD 5M</td><td>5%</td></tr>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- ESTRUCTURA DE COSTOS -->
+        <h2>Estructura de Costos Detallada</h2>
+
+        <h3>Equipo Base (Todos los escenarios)</h3>
+        <table>
+            <tr>
+                <th>Rol</th>
+                <th>Costo Mensual</th>
+                <th>Costo Anual</th>
+            </tr>
+            <tr><td>John Gandolfo (Gerente)</td><td>USD 8,000</td><td>USD 96,000</td></tr>
+            <tr><td>Juana Bidau (Líder)</td><td>USD 4,000</td><td>USD 48,000</td></tr>
+            <tr><td>Ignacio Ruzo (Analista)</td><td>USD 1,000</td><td>USD 12,000</td></tr>
+            <tr><td>Comercial Jr (desde Ene)</td><td>USD 1,000</td><td>USD 12,000</td></tr>
+            <tr style="background: #e3f2fd; font-weight: 700;"><td>SUBTOTAL PERSONAL</td><td>USD 14,000</td><td>USD 168,000</td></tr>
+            <tr><td>Stack AI (herramientas)</td><td>USD 620</td><td>USD 7,440</td></tr>
+            <tr style="background: #e3f2fd; font-weight: 700;"><td>TOTAL BASE</td><td>USD 14,620</td><td>USD 175,440</td></tr>
+        </table>
+
+        <h3>Costos Adicionales por Escenario</h3>
+        <table>
+            <tr>
+                <th>Concepto</th>
+                <th>Conservador</th>
+                <th>Base</th>
+                <th>Optimista</th>
+            </tr>
+            <tr><td>Personal base</td><td>USD 180,000</td><td>USD 180,000</td><td>USD 180,000</td></tr>
+            <tr><td>Comercial Jr (si trigger)</td><td>USD 0</td><td>USD 18,000</td><td>USD 27,000</td></tr>
+            <tr><td>Comercial Sr (si trigger)</td><td>USD 0</td><td>USD 0</td><td>USD 35,000</td></tr>
+            <tr><td>Stack AI</td><td>USD 7,440</td><td>USD 8,370</td><td>USD 10,420</td></tr>
+            <tr><td>Marketing</td><td>USD 0</td><td>USD 0</td><td>USD 54,000</td></tr>
+            <tr><td>Eventos/materiales</td><td>USD 0</td><td>USD 0</td><td>USD 10,000</td></tr>
+            <tr style="background: #e3f2fd; font-weight: 700;"><td>TOTAL COSTOS</td><td>USD 175K</td><td>USD 175K</td><td>USD 219K</td></tr>
+        </table>
+
+        <!-- RESUMEN COMPARATIVO -->
+        <h2>Resumen Comparativo</h2>
+        <table>
+            <tr>
+                <th>Métrica</th>
+                <th>Conservador</th>
+                <th>Base</th>
+                <th>Optimista</th>
+            </tr>
+            <tr><td>Clientes nuevos/año</td><td>48</td><td>96</td><td>144</td></tr>
+            <tr><td>Clientes Dic 2026</td><td>332</td><td>380</td><td>428</td></tr>
+            <tr><td>AUM Dic 2026</td><td>USD 39.6MM</td><td>USD 58.8MM</td><td>USD 102MM</td></tr>
+            <tr><td>Crecimiento AUM</td><td>+32%</td><td>+96%</td><td>+240%</td></tr>
+            <tr><td>Revenue Neto (50%)</td><td>USD 183K</td><td>USD 239K</td><td>USD 380K</td></tr>
+            <tr><td>Costos Totales</td><td>USD 175K</td><td>USD 175K</td><td>USD 219K</td></tr>
+            <tr style="font-weight: 700;"><td>Resultado Operativo</td><td class="negative">+USD 8K</td><td class="neutral">+USD 64K</td><td class="positive">+USD 161K</td></tr>
+            <tr><td>Margen Operativo</td><td>+4%</td><td>+27%</td><td>+42%</td></tr>
+            <tr><td>Headcount fin 2026</td><td>5</td><td>5</td><td>6</td></tr>
+        </table>
+
+        <!-- RECOMENDACIONES -->
+        <h2>Recomendaciones</h2>
+        <div class="summary-box">
+            <h3 style="margin-top: 0;">1. Presupuesto Recomendado: ESCENARIO BASE</h3>
+            <ul>
+                <li>Objetivo realista de break-even</li>
+                <li>Inversión controlada (solo Comercial Jr cuando hay AUM)</li>
+                <li>Sin riesgo de pérdidas significativas</li>
+                <li>Base sólida para escalar si se superan targets</li>
+            </ul>
+
+            <h3>2. Target Aspiracional: ESCENARIO OPTIMISTA</h3>
+            <ul>
+                <li>Si captación supera 8 cli/mes en Q1, acelerar inversión</li>
+                <li>Usar triggers como guía para desbloquear costos</li>
+                <li>No invertir anticipadamente, esperar resultados</li>
+            </ul>
+
+            <h3>3. Regla de Oro</h3>
+            <p><strong>"Solo invertir cuando el AUM lo justifica"</strong></p>
+            <ul>
+                <li>Comercial Jr: cuando AUM > USD 25MM</li>
+                <li>Marketing: cuando AUM > USD 40MM</li>
+                <li>Comercial Sr: cuando AUM > USD 50MM</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--gris-medio);">
+            <img src="logo_vetacap.png" alt="Vetacap" style="height: 35px;">
+            <p style="color: var(--verde-acento); font-weight: 700; margin-top: 10px;">EL FOCO ESTÁ EN VOS</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
