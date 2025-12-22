@@ -455,42 +455,59 @@
             </div>
 
             <h3>¿Cómo vamos a lograr la meta?</h3>
-            <div style="display: flex; justify-content: space-around; align-items: flex-start; margin: 25px 0; flex-wrap: wrap; gap: 30px;">
-                <div style="text-align: center;">
-                    <h4 style="color: #1036E2; margin-bottom: 15px;">Distribución por Canal</h4>
-                    <svg width="200" height="200" viewBox="0 0 200 200">
-                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#00C600" stroke-width="40" stroke-dasharray="230.4 502.4" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#1036E2" stroke-width="40" stroke-dasharray="155.5 502.4" stroke-dashoffset="-230.4" transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#021751" stroke-width="40" stroke-dasharray="115.5 502.4" stroke-dashoffset="-385.9" transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="60" fill="white"/>
-                    </svg>
-                    <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px; font-size: 10pt;">
-                        <div><span style="display: inline-block; width: 12px; height: 12px; background: #00C600; border-radius: 2px; margin-right: 5px;"></span>Referidos: 46%</div>
-                        <div><span style="display: inline-block; width: 12px; height: 12px; background: #1036E2; border-radius: 2px; margin-right: 5px;"></span>Crosselling: 31%</div>
-                        <div><span style="display: inline-block; width: 12px; height: 12px; background: #021751; border-radius: 2px; margin-right: 5px;"></span>Nuevos: 23%</div>
-                    </div>
-                </div>
-                <div style="text-align: center;">
-                    <h4 style="color: #1036E2; margin-bottom: 15px;">Meta por Segmento (Estimación)</h4>
-                    <svg width="200" height="200" viewBox="0 0 200 200">
-                        <!-- Orden: Private 5%, Premium 25%, Preferente 50%, Estándar 15%, Inicial 5% -->
-                        <!-- circumference = 2*PI*80 = 502.4 -->
-                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#021751" stroke-width="40" stroke-dasharray="25.1 502.4" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#4169E1" stroke-width="40" stroke-dasharray="125.6 502.4" stroke-dashoffset="-25.1" transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#00C600" stroke-width="40" stroke-dasharray="251.2 502.4" stroke-dashoffset="-150.7" transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#1036E2" stroke-width="40" stroke-dasharray="75.4 502.4" stroke-dashoffset="-401.9" transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="80" fill="transparent" stroke="#87CEEB" stroke-width="40" stroke-dasharray="25.1 502.4" stroke-dashoffset="-477.3" transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="60" fill="white"/>
-                    </svg>
-                    <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 10px; font-size: 10pt;">
-                        <div><span style="display: inline-block; width: 12px; height: 12px; background: #021751; border-radius: 2px; margin-right: 5px;"></span>Private: 5%</div>
-                        <div><span style="display: inline-block; width: 12px; height: 12px; background: #4169E1; border-radius: 2px; margin-right: 5px;"></span>Premium: 25%</div>
-                        <div><span style="display: inline-block; width: 12px; height: 12px; background: #00C600; border-radius: 2px; margin-right: 5px;"></span><strong>Preferente: 50%</strong> ← FOCO</div>
-                        <div><span style="display: inline-block; width: 12px; height: 12px; background: #1036E2; border-radius: 2px; margin-right: 5px;"></span>Estándar: 15%</div>
-                        <div><span style="display: inline-block; width: 12px; height: 12px; background: #87CEEB; border-radius: 2px; margin-right: 5px;"></span>Inicial: 5%</div>
-                    </div>
-                </div>
+
+            <p>La captación de <strong>96 nuevos clientes</strong> durante 2026 provendrá de tres fuentes principales:</p>
+
+            <div class="info-box">
+                <h4 style="color: var(--verde-acento); margin-bottom: 15px;">1. Referidos — 44 clientes (46%)</h4>
+                <p style="margin-bottom: 8px;">Personas referidas por <strong>socios, productores y referenciadores</strong> de la red de Vetacap.</p>
+                <p style="color: #666; font-size: 10pt;">Es la principal fuente de captación. El cliente llega con confianza previa por la recomendación de alguien cercano.</p>
             </div>
+
+            <div class="info-box verde">
+                <h4 style="color: var(--azul-principal); margin-bottom: 15px;">2. Cross-selling — 30 clientes (31%)</h4>
+                <p style="margin-bottom: 8px;"><strong>Interacción entre áreas:</strong> clientes que ya operan en Corporate o PyME y migran a Banca Privada.</p>
+                <p style="color: #666; font-size: 10pt;">Son dueños de empresas que ya tienen relación con Vetacap a través de su compañía. Conocen la firma y confían en el servicio.</p>
+            </div>
+
+            <div class="info-box">
+                <h4 style="color: var(--azul-oscuro); margin-bottom: 15px;">3. Nuevos — 22 clientes (23%)</h4>
+                <p style="margin-bottom: 8px;">Clientes captados directamente por el <strong>equipo comercial</strong> de Banca Privada.</p>
+                <p style="color: #666; font-size: 10pt;">Prospectos identificados en eventos, networking, o contacto directo. Requieren mayor esfuerzo de conversión.</p>
+            </div>
+
+            <table style="margin-top: 20px;">
+                <tr>
+                    <th>Fuente</th>
+                    <th>Clientes/Año</th>
+                    <th>%</th>
+                    <th>Clientes/Mes</th>
+                </tr>
+                <tr>
+                    <td><strong>Referidos</strong></td>
+                    <td>44</td>
+                    <td>46%</td>
+                    <td>~4</td>
+                </tr>
+                <tr>
+                    <td><strong>Cross-selling</strong> (Corporate/PyME)</td>
+                    <td>30</td>
+                    <td>31%</td>
+                    <td>~2-3</td>
+                </tr>
+                <tr>
+                    <td><strong>Nuevos</strong> (Equipo Comercial)</td>
+                    <td>22</td>
+                    <td>23%</td>
+                    <td>~2</td>
+                </tr>
+                <tr style="background: var(--gris-claro); font-weight: 600;">
+                    <td><strong>Total</strong></td>
+                    <td><strong>96</strong></td>
+                    <td><strong>100%</strong></td>
+                    <td><strong>8</strong></td>
+                </tr>
+            </table>
 
             <h3>Pilares del Plan</h3>
             <ol>
