@@ -245,6 +245,59 @@
 
         .print-btn:hover { background: #00a800; }
 
+        /* ARQUETIPOS */
+        .arquetipos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .arquetipo-card {
+            background: var(--gris-claro);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--azul-principal);
+        }
+
+        .arquetipo-card.card-alta { border-left-color: var(--verde-acento); }
+        .arquetipo-card.card-baja { border-left-color: #e53e3e; }
+
+        .arquetipo-header {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--azul-principal);
+            margin-bottom: 5px;
+        }
+
+        .arquetipo-subtitle {
+            font-size: 10pt;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .arquetipo-pain {
+            background: #fff5f5;
+            border-left: 3px solid #e53e3e;
+            padding: 10px 12px;
+            font-size: 10pt;
+            margin-bottom: 12px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .arquetipo-pain strong { color: #c53030; }
+
+        .arquetipo-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+        .arquetipo-badges span {
+            font-size: 9pt;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: var(--gris-medio);
+        }
+        .badge-alta { background: rgba(0, 198, 0, 0.15) !important; color: #008c00; font-weight: 600; }
+        .badge-media { background: rgba(16, 54, 226, 0.15) !important; color: var(--azul-principal); font-weight: 600; }
+        .badge-baja { background: rgba(255, 100, 100, 0.15) !important; color: #c00; font-weight: 600; }
+
         .page-break { page-break-before: always; }
 
         @media print {
@@ -659,6 +712,52 @@
                     <td>Pueden escalar a Express Line offshore</td>
                 </tr>
             </table>
+
+            <h3>Arquetipos del Cliente Preferente</h3>
+            <p>Hemos identificado <strong>3 perfiles típicos</strong> de clientes en el segmento Preferente. Cada uno tiene necesidades, miedos y motivaciones diferentes que debemos entender para adaptar nuestra comunicación y servicio.</p>
+
+            <div class="arquetipos-grid">
+                <!-- Arquetipo 1: Dueño PyME -->
+                <div class="arquetipo-card">
+                    <div class="arquetipo-header">01 - Dueño de PyME</div>
+                    <div class="arquetipo-subtitle">Ya opera con Vetacap por su empresa</div>
+                    <div class="arquetipo-pain">
+                        <strong>Pain Point:</strong> Caja mezclada empresa/personal, liquidez sin destino, sin tiempo para finanzas personales
+                    </div>
+                    <div class="arquetipo-badges">
+                        <span class="badge-media">Confianza Media</span>
+                        <span>Decisión Media</span>
+                    </div>
+                </div>
+
+                <!-- Arquetipo 2: Patrimonio Consolidado -->
+                <div class="arquetipo-card card-alta">
+                    <div class="arquetipo-header">02 - Patrimonio Consolidado</div>
+                    <div class="arquetipo-subtitle">Referido del círculo de socios</div>
+                    <div class="arquetipo-pain">
+                        <strong>Pain Point:</strong> Exposición fiscal y legal, falta de soluciones a medida, desconexión entre asesores
+                    </div>
+                    <div class="arquetipo-badges">
+                        <span class="badge-alta">Confianza Alta</span>
+                        <span>Decisión Rápida</span>
+                    </div>
+                </div>
+
+                <!-- Arquetipo 3: Ahorrista Corporativo -->
+                <div class="arquetipo-card card-baja">
+                    <div class="arquetipo-header">03 - Ahorrista Corporativo</div>
+                    <div class="arquetipo-subtitle">Empleado con ahorro de toda la vida</div>
+                    <div class="arquetipo-pain">
+                        <strong>Pain Point:</strong> No sabe cómo empezar a invertir, plata estancada, abandono bancario
+                    </div>
+                    <div class="arquetipo-badges">
+                        <span class="badge-baja">Confianza Baja</span>
+                        <span>Decisión Lenta</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://arquetipos-vetacap.vercel.app" target="_blank" class="link-button">Ver Arquetipos Completos →</a>
 
             <h3>Canales de Captación</h3>
             <ul>
